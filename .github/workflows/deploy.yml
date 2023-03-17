@@ -17,10 +17,11 @@ jobs:
         with:
           node-version: 18.x
           cache: "npm"
-      - uses: actions/download-artifact@v3
+      - name: Build project
+        run: npm run build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
         with:
           name: project
           path: build
-
-      - name: Display project structure
-        run: ls -R
