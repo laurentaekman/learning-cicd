@@ -17,6 +17,8 @@ jobs:
         with:
           node-version: 18.x
           cache: "npm"
+      - name: Install dependencies
+        run: npm i
       - name: Build project
         run: npm run build
 
